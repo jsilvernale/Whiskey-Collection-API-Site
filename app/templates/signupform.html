@@ -1,0 +1,28 @@
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset id="first_name-field">
+            {{ form.first_name.label }}
+            {{ form.first_name(class = "form-control", placeholder = 'Whiskey lovers first name') }}
+        </fieldset>
+    </div>
+    <div>
+        <fieldset id="last_name-field">
+            {{ form.last_name.label }}
+            {{ form.last_name(class = "form-control", placeholder = 'Whiskey lovers last name') }}
+        </fieldset>
+    </div>
+    <div>
+        <fieldset id="email-field">
+            {{ form.email.label }}
+            {{ form.email(class = "form-control", placeholder = "Whiskey lovers email") }}
+        </fieldset>
+    </div>
+    <div>
+        <fieldset id="password-field">
+            {{ form.password.label }}
+            {{ form.password(class = "form-control", placeholder = "Whiskey lovers password") }}
+        </fieldset>
+    </div>
+        {{ form.submit_button(class = "btn btn-primary btn-block mt-2") }}
+</form>

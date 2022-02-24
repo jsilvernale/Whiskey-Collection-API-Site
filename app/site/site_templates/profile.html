@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="bg-success text-light text-center shadow mb-20">
+        <div class="container p-5 bg-success">
+            <div class="d-md md-flex bg-success align-items-center justify-content-evenly">
+                <h1 class="col text-center p-5">{{ current_user.first_name }}'s user profile</h1>
+            </div>
+        </div>
+    </section>
+    <section class="text-start">
+        <div class="container p-10">
+            <div class="row"><br>
+                <h3 class="p-5 text-center">Profile Information</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Email: {{ current_user.email }}</li>
+                    <li class="list-group-item">Token: {{ current_user.token }}</li>
+                </ul>
+            </div>
+            <div class="row mt-20">
+                <div class="d-flex justify-content-around rounded img-fluid">
+                    <img src="../../static/images/profile whiskey.jpg">
+                    <img src="../../static/images/whisky index photo.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
