@@ -48,14 +48,14 @@ class User(db.Model, UserMixin):
         return f'User {self.email} has been added to the database'
 
 class Whiskey(db.Model):
-    whiskey_id = db.Column(db.String, primary_key = True)
+    id = db.Column(db.String, primary_key = True)
     brand = db.Column(db.String(50), nullable = False)
     type = db.Column(db.String(50), nullable = False)
     alc_percent = db.Column(db.String(20), nullable = False)
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
-    def __init__(self, brand, type, alc_percent, user_token, whiskey_id = ''):
-        self.whiskey_id = self.set_id()
+    def __init__(self, brand, type, alc_percent, user_token, id = ''):
+        self.id = self.set_id()
         self.brand = brand
         self.type = type
         self.alc_percent = alc_percent
@@ -69,7 +69,7 @@ class Whiskey(db.Model):
 
 class WhiskeySchema(ma.Schema):
     class Meta:
-        fields = ['whiskey_id', 'brand', 'type', 'alc_percent']
+        fields = ['id', 'brand', 'type', 'alc_percent']
 
 whiskey_schema = WhiskeySchema()
 whiskies_schema = WhiskeySchema(many = True)
